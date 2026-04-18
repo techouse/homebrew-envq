@@ -1,0 +1,35 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    name: Test formula
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Tap local checkout
+        run: brew tap techouse/envq "$GITHUB_WORKSPACE"
+
+      - name: Style
+        run: brew style techouse/envq/envq
+
+      - name: Audit
+        run: brew audit --strict --formula techouse/envq/envq
+
+      - name: Install from source
+        run: brew install --build-from-source techouse/envq/envq
+
+      - name: Test
+        run: brew test techouse/envq/envq
