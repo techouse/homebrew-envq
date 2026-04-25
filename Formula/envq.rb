@@ -1,8 +1,8 @@
 class Envq < Formula
   desc "Byte-preserving .env query and editing tool"
   homepage "https://techouse.github.io/envq/"
-  url "https://github.com/techouse/envq/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "73f8bc6ca3417dfa34b4a3e8b40cc83afdc4052611b9394e87e96f7390ef27cc"
+  url "https://github.com/techouse/envq/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "c0a618deee7b27ea3fa34da1edd40ae4c8e3c22f03f1239b0df915a3203d8244"
   license "BSD-3-Clause"
   head "https://github.com/techouse/envq.git", branch: "main"
 
